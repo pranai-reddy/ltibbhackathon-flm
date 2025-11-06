@@ -6,7 +6,7 @@ metadata:
     app: dbapp
   namespace: vishnu
 spec:
-  serviceName: "myappsvc" # We are linking app pods with db pods with app svc
+  serviceName: "mysqldb" # We are linking app pods with db pods with app svc
   replicas: 2
   selector:
     matchLabels:
@@ -23,7 +23,7 @@ spec:
           ports:
            - containerPort: 3306
           resources:
-            requets:
+            requests:
               cpu: "100m"
               memory: "50Mi"
             limits:

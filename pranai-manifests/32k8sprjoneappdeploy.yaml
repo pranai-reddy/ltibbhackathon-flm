@@ -8,7 +8,8 @@ metadata:
 spec:
   replicas: 2
   selector:
-    app: myapp
+    matchLabels:
+      app: myapp
   template:
     metadata:
       name: k8sproj
@@ -21,14 +22,14 @@ spec:
           ports:
             - containerPort: 80
           resources:
-            requets:
+            requests:
               cpu: "100m"
               memory: "50Mi"
             limits:
               cpu: "200m"
               memory: "100Mi"
-          imagePullSecrets:
+      imagePullSecrets:
           # kubectl create ns vishnu
           # kubectl create secret docker-registry mysecret --docker-username=pranai123 --docker-password=Pranai@123 -n vishnu
           # Execute the above cmds in KOPS, hence for Docker private repo
-            - name: mysecret # Name of the secret
+      - name: mysecret # Name of the secret

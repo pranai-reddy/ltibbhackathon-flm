@@ -6,7 +6,7 @@ metadata:
     app: dbapp
   namespace: vishnu
 spec:
-  ClusterIP: None
+  clusterIP: None
   selector:
     app: dbapp
   ports:
